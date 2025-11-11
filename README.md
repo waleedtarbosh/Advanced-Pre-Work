@@ -1,6 +1,7 @@
 # ProSports ⚽
 
 
+
 [![API](https://img.shields.io/badge/API-API--Football-blue.svg)](https://www.api-football.com/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -9,6 +10,14 @@
 > ProSports: A dynamic, multi-page football stats website built with vanilla HTML, CSS, and JS, powered by the API-Football API.
 
 This is a website dedicated to providing comprehensive and real-time football (soccer) statistics. The site fetches data directly from the API-Football service to display team standings, player stats, match fixtures, and more.
+
+---
+
+## 📍 Live Demo
+
+**[https://prosports-football.netlify.app/](https://prosports-football.netlify.app/)**
+
+*(Note: The live demo may not function if the public API key has hit its daily limit. For guaranteed access, please run the project locally with your own key.)*
 
 ---
 
@@ -56,11 +65,21 @@ To get a local copy up and running, follow these simple steps.
     git clone [https://github.com/](https://github.com/)[YourUsername]/Advanced-Pre-Work.git
     ```
     *(Don't forget to replace `[YourUsername]` with your actual GitHub username!)*
-2.  **Navigate to the project directory:**
+
+2.  **‼️ IMPORTANT: Add Your API Key**
+
+    This project requires a valid API key from [API-Football](https://www.api-football.com/) to function.
+
+    * After cloning, you must get your own API key.
+    * In the project, find the JavaScript files (e.g., `fixtures/fixtures.js`, `standings/standings.js`, etc.).
+    * Inside each file, find the variable `const API_KEY`.
+    * Replace the placeholder string `"PUT_YOUR_REAL_API_KEY_HERE"` with your actual key.
+
+3.  **Navigate to the project directory:**
     ```bash
     cd Advanced-Pre-Work
     ```
-3.  **Open in your browser:**
+4.  **Open in your browser:**
     Open the `index.html` file directly in your preferred web browser.
 
 ## 💡 How to Use
