@@ -1,0 +1,189 @@
+/* media.css */
+
+/* 1. Hamburger Button Styling */
+.hamburger-btn {
+    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger-btn .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: white;
+    transition: 0.3s;
+}
+
+/* ======================================================= */
+/* === For Medium Screens (Tablets) and Smaller === */
+/* ======================================================= */
+@media (max-width: 992px) {
+
+    /* 2. Show the hamburger button */
+    .hamburger-btn {
+        display: block; 
+    }
+
+    /* 3. Hide the main nav links (prepare for dropdown) */
+    .nav-right .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 75px; 
+        left: 0;
+        width: 100%;
+        background: rgba(30, 40, 60, 0.95); 
+        padding: 10px 0;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* 4. Style list items for vertical layout */
+    .nav-links li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 15px;
+        width: 100%;
+    }
+
+    /* 5. Show menu when .active class is added by JS */
+    .nav-right .nav-links.active {
+        display: flex; 
+    }
+
+    /* 6. "Players" Submenu Mobile Styling */
+    
+    /* Disable desktop hover effect on mobile */
+    .nav-links li.dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    /* Hide submenu by default on mobile */
+    .dropdown-menu {
+        position: relative; 
+        top: auto;
+        left: auto;
+        min-width: 100%;
+        background: rgba(10, 10, 20, 0.5); 
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        padding-left: 20px; 
+    }
+    
+    /* Show submenu when .open class is added by JS */
+    .nav-links li.dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu li a {
+        text-align: left; 
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+    
+    /* Style the arrow for mobile */
+    .dropdown-toggle::after {
+        content: ' ▸'; /* Right-pointing arrow */
+        font-size: 0.7em;
+        margin-left: 5px;
+        display: var(--arrow-display, inline-block); 
+        transition: transform 0.3s ease; 
+    }
+
+    /* Rotate arrow when submenu is open */
+    .nav-links li.dropdown.open .dropdown-toggle::after {
+        transform: rotate(90deg); /* Down-pointing arrow */
+    }
+
+     /* ================================================== */
+     /* === Additional Page Adjustments (Hero Section) === */
+     /* ================================================== */
+
+     .hero-section {
+        padding-top: 120px; 
+     }
+
+     .hero-content {
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center;
+     }
+
+     .hero-text-left {
+        max-width: 100%;
+     }
+
+     .hero-title {
+        font-size: 5rem; 
+     }
+
+     .hero-data-right {
+        width: 100%;
+        margin-top: 30px;
+     }
+     
+     .info-box {
+        width: 100%;
+        max-width: 400px;
+        margin: 20px auto;
+     }
+
+     .next-match-bar {
+        flex-direction: column;
+        padding: 15px;
+        text-align: center;
+     }
+
+     .countdown-timer {
+        margin-top: 15px;
+     }
+}
+
+/* ======================================================= */
+/* === For Smallest Screens (Phones) === */
+/* ======================================================= */
+@media (max-width: 480px) {
+
+    /* Move hero text further down */
+    .hero-section {
+        padding-top: 220px; /* Adjust this value as needed */
+    }
+    
+    /* Hide the side info boxes */
+    .hero-data-right {
+        display: none;
+    }
+    
+    .hero-title {
+        font-size: 3.5rem; /* Smaller font for phones */
+    }
+
+    .time-block .number {
+        font-size: 2.5rem;
+    }
+    
+    .navbar {
+        padding: 5px 10px;
+        width: 98%; 
+    }
+
+    .nav-left .logo {
+        font-size: 1rem;
+        padding: 5px 10px 5px 5px;
+    }
+    .logo-img {
+        width: 35px;
+        height: 35px;
+    }
+}
