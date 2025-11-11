@@ -1,0 +1,472 @@
+/* --- Global Reset & Setup --- */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    color: white;
+    background-color: #0a0a14;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ============================================== */
+/* === START: NAVBAR CSS (Merged) === */
+/* ============================================== */
+.main-header {
+    width: 95%;
+    max-width: 1700px;
+    margin: 0 auto;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: rgba(30, 40, 60, 0.7);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.nav-left .logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background: linear-gradient(90deg, #00f0ff, #ff007f);
+    border-radius: 50px;
+    padding: 5px 15px 5px 5px;
+    box-shadow: 0 0 12px #ff007f;
+    color: #0a0a14; 
+}
+
+.logo-img {
+    height: 45px;
+    width: 45px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: white;
+    border: 4px solid #0a0a14; 
+    position: relative;
+}
+
+.logo-img::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 20px; 
+    height: 22px;
+    background-color: #0a0a14; 
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.nav-right .nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.nav-links a.active {
+    color: #e50a14; 
+}
+
+.nav-links li.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    content: ' ▼';
+    font-size: 0.7em;
+    margin-left: 5px;
+    display: var(--arrow-display, inline-block); 
+}
+
+.dropdown-menu {
+    display: none; 
+    position: absolute;
+    top: 100%; 
+    right: 0; 
+    left: auto;
+    background-color: rgba(30, 40, 60, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: none; 
+    border-radius: 0 0 15px 15px; 
+    min-width: 280px; 
+    z-index: 1001; 
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    overflow: hidden; 
+}
+
+.nav-links li.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    margin: 0; 
+}
+
+.dropdown-menu li a {
+    display: block; 
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    color: #ccc;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #e50a14; 
+    color: white;
+}
+/* ============================================== */
+/* === END: NAVBAR CSS === */
+/* ============================================== */
+
+
+/* ============================================== */
+/* === START: PLAYER_TROPHIES.CSS (Page-Specific) === */
+/* ============================================== */
+.container {
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+h1 {
+    color: #ffffff; /* Dark mode fix */
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 3px;
+    margin-top: 120px;
+}
+.subtitle {
+    text-align: center;
+    font-size: 1.1em;
+    color: #ccc; /* Dark mode fix */
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #ccc; /* Dark mode fix */
+    text-align: left;
+}
+
+/* --- Input Box and List Styling (Dark Mode) --- */
+input[type="text"], select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #555; /* Dark mode fix */
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #2a2a3a; /* Dark mode fix */
+    color: #ffffff; /* Dark mode fix */
+    box-sizing: border-box; 
+    transition: border-color 0.3s, box-shadow 0.3s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+select {
+    /* White arrow for dark mode */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 10px;
+    padding-right: 40px;
+}
+
+input[type="text"]:focus, select:focus {
+    border-color: #17a2b8; 
+    box-shadow: 0 0 0 4px rgba(23, 162, 184, 0.1);
+    outline: none;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #333; /* Dark mode fix */
+    margin: 30px 0;
+}
+
+/* --- Search Box Layout --- */
+.search-box {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column */
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.dynamic-inputs {
+    width: 100%;
+}
+
+.hidden-input {
+    display: none;
+}
+
+/* --- Button Styling --- */
+button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #17a2b8, #007991);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(23, 162, 184, 0.15);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(23, 162, 184, 0.2);
+}
+button:active {
+    transform: translateY(-1px);
+}
+
+/* --- Results Container --- */
+#trophies-container {
+    margin-top: 25px;
+    display: grid;
+    /* (New) Display cards in a grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+/* --- (New) Trophy Card Styling (Dark Mode) --- */
+.trophy-card {
+    display: flex;
+    align-items: center;
+    background-color: #1a1a2e; /* Dark mode fix */
+    border-radius: 10px;
+    border: 1px solid #333; /* Dark mode fix */
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.trophy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.07);
+}
+
+/* Trophy Icon */
+.trophy-icon {
+    margin-right: 15px;
+}
+.trophy-icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+/* Icon Colors */
+.trophy-icon.icon-winner svg {
+    color: #f1c40f; /* Gold */
+}
+.trophy-icon.icon-runner-up svg {
+    color: #bdc3c7; /* Silver */
+}
+.trophy-icon.icon-other svg {
+    color: #17a2b8; /* Teal */
+}
+
+.trophy-info {
+    text-align: left;
+    flex: 1;
+}
+
+.trophy-info h2 {
+    font-size: 1.1em;
+    color: #ffffff; /* Dark mode fix */
+    font-weight: 700;
+    margin: 0;
+}
+.trophy-info .place {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin: 2px 0 5px 0;
+}
+/* Place Colors */
+.place-winner {
+    color: #27ae60; /* Green */
+}
+.place-runner-up {
+    color: #bdc3c7; /* Silver-grey */
+}
+.place-other {
+    color: #ccc; /* Light grey for other */
+}
+
+.trophy-info .details {
+    font-size: 0.9em;
+    color: #ccc; /* Dark mode fix */
+}
+
+/* ======================================================= */
+/* === START: RESPONSIVE MEDIA QUERIES (Merged) === */
+/* ======================================================= */
+
+/* 1. Hamburger Button Styling */
+.hamburger-btn {
+    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger-btn .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: white;
+    transition: 0.3s;
+}
+
+/* ======================================================= */
+/* === For Medium Screens (Tablets) and Smaller === */
+/* ======================================================= */
+@media (max-width: 992px) {
+
+    /* 2. Show the hamburger button */
+    .hamburger-btn {
+        display: block; 
+    }
+
+    /* 3. Hide the main nav links (prepare for dropdown) */
+    .nav-right .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 75px; 
+        left: 0;
+        width: 100%;
+        background: rgba(30, 40, 60, 0.95); 
+        padding: 10px 0;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* 4. Style list items for vertical layout */
+    .nav-links li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 15px;
+        width: 100%;
+    }
+
+    /* 5. Show menu when .active class is added by JS */
+    .nav-right .nav-links.active {
+        display: flex; 
+    }
+
+    /* 6. "Players" Submenu Mobile Styling */
+    .nav-links li.dropdown:hover .dropdown-menu {
+        display: none;
+    }
+    .dropdown-menu {
+        position: relative; 
+        top: auto;
+        left: auto;
+        min-width: 100%;
+        background: rgba(10, 10, 20, 0.5); 
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        padding-left: 20px; 
+    }
+    .nav-links li.dropdown.open .dropdown-menu {
+        display: block;
+    }
+    .dropdown-menu li a {
+        text-align: left; 
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+    .dropdown-toggle::after {
+        content: ' ▸'; 
+        font-size: 0.7em;
+        margin-left: 5px;
+        display: var(--arrow-display, inline-block); 
+        transition: transform 0.3s ease; 
+    }
+    .nav-links li.dropdown.open .dropdown-toggle::after {
+        transform: rotate(90deg); 
+    }
+}
+
+/* ======================================================= */
+/* === For Smallest Screens (Phones) === */
+/* ======================================================= */
+@media (max-width: 480px) {
+    
+    .navbar {
+        padding: 5px 10px;
+        width: 98%; 
+    }
+
+    .nav-left .logo {
+        font-size: 1rem;
+        padding: 5px 10px 5px 5px;
+    }
+    .logo-img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    /* Page-specific responsive adjustment */
+    .search-box {
+        grid-template-columns: 1fr; /* Stack input and button */
+    }
+}
