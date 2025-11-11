@@ -57,7 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // ======================================================
 
     // --- API Configuration ---
-    const apiKey = 'b801cc075516be97da6bd24c81b304c7'; // Remember to change your API key
+        /*
+===================================================================
+NOTE FOR DEVELOPERS:
+A valid API key from API-Football.com is required.
+Please replace the placeholder string "PUT_YOUR_API_KEY_HERE"
+with your personal key to fetch the data.
+===================================================================
+*/
+    const apiKey = 'b801cc075516be97da6bd24c81b304c7'; // FAKE API KEY / PLACEHOLDER
     const fetchOptions = {
         method: 'GET',
         headers: {
