@@ -1,12 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // ======================================================
+    // === START: NAVBAR JS (Merged) ===
+    // ======================================================
+
     // --- 1. Hamburger Menu Code (Toggle main menu) ---
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const navMenu = document.getElementById('nav-links-menu');
 
-    hamburgerBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-    });
+    if (hamburgerBtn && navMenu) {
+        hamburgerBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    }
 
     // --- 2. Code to open "Players" submenu on mobile click ---
     const dropdowns = document.querySelectorAll('.nav-links .dropdown');
@@ -14,40 +20,36 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdowns.forEach(dropdown => {
         const toggleLink = dropdown.querySelector('.dropdown-toggle');
         
-        toggleLink.addEventListener('click', (event) => {
-            
-            // Check if we are in mobile view (by checking if hamburger is visible)
-            if (hamburgerBtn.offsetParent !== null) { 
-                
-                // [Important] Prevent the link from navigating to "players.html"
-                event.preventDefault(); 
-                
-                // Toggle the 'open' class on the parent (li.dropdown)
-                dropdown.classList.toggle('open');
-            }
-        });
+        if (toggleLink) {
+            toggleLink.addEventListener('click', (event) => {
+                if (hamburgerBtn && hamburgerBtn.offsetParent !== null) { 
+                    event.preventDefault(); 
+                    dropdown.classList.toggle('open');
+                }
+            });
+        }
     });
 
     // --- 3. Code to control "Players" arrow visibility (hide on desktop) ---
     function handleArrowVisibility() {
+        const hamburgerBtn = document.getElementById('hamburger-btn'); 
         const dropdownToggle = document.querySelector('.dropdown-toggle');
-        if (dropdownToggle) {
-            // If hamburger is hidden (we are on desktop), hide the arrow
+        
+        if (dropdownToggle && hamburgerBtn) {
             if (hamburgerBtn.offsetParent === null) { 
                 dropdownToggle.style.setProperty('--arrow-display', 'none');
             } else {
-                // Else (we are on mobile), show the arrow
                 dropdownToggle.style.setProperty('--arrow-display', 'inline-block');
             }
         }
     }
 
-    // Call the function on page load
     handleArrowVisibility();
-
-    // And call it on window resize
     window.addEventListener('resize', handleArrowVisibility);
-    
+
+    // ======================================================
+    // === END: NAVBAR JS ===
+    // ======================================================
     
     // --- 4. NEW: CR7 Goal Counter ---
     function startGoalCounter() {

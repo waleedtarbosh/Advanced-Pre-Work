@@ -1,56 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-
-    // ======================================================
-    // === START: NAVBAR JS (Merged) ===
-    // ======================================================
-
-    // --- 1. Hamburger Menu Code (Toggle main menu) ---
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const navMenu = document.getElementById('nav-links-menu');
-
-    if (hamburgerBtn && navMenu) {
-        hamburgerBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-    }
-
-    // --- 2. Code to open "Players" submenu on mobile click ---
-    const dropdowns = document.querySelectorAll('.nav-links .dropdown');
-
-    dropdowns.forEach(dropdown => {
-        const toggleLink = dropdown.querySelector('.dropdown-toggle');
-        
-        if (toggleLink) {
-            toggleLink.addEventListener('click', (event) => {
-                if (hamburgerBtn && hamburgerBtn.offsetParent !== null) { 
-                    event.preventDefault(); 
-                    dropdown.classList.toggle('open');
-                }
-            });
-        }
-    });
-
-    // --- 3. Code to control "Players" arrow visibility (hide on desktop) ---
-    function handleArrowVisibility() {
-        const hamburgerBtn = document.getElementById('hamburger-btn'); 
-        const dropdownToggle = document.querySelector('.dropdown-toggle');
-        
-        if (dropdownToggle && hamburgerBtn) {
-            if (hamburgerBtn.offsetParent === null) { 
-                dropdownToggle.style.setProperty('--arrow-display', 'none');
-            } else {
-                dropdownToggle.style.setProperty('--arrow-display', 'inline-block');
-            }
-        }
-    }
-
-    handleArrowVisibility();
-    window.addEventListener('resize', handleArrowVisibility);
-
-    // ======================================================
-    // === END: NAVBAR JS ===
-    // ======================================================
-
 
     // ======================================================
     // === START: PLAYER_HISTORY.JS (Page-Specific Logic) ===
@@ -162,5 +109,3 @@ with your personal key to fetch the data.
     // ======================================================
     // === END: PLAYER_HISTORY.JS (Page-Specific Logic) ===
     // ======================================================
-
-}); // End of DOMContentLoaded

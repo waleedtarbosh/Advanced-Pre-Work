@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top Scorers</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    
+
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="top_scorers.css">
 </head>
+
 <body>
     <header class="main-header">
         <nav class="navbar">
             <div class="nav-left">
                 <a href="../index.html" class="logo">
-                    <div class="logo-img"></div> 
+                    <div class="logo-img"></div>
                     <span>ProSports</span>
                 </a>
             </div>
             <div class="nav-right">
-                
+
                 <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -31,9 +34,10 @@
                     <li><a href="../fixtures/fixtures.html">Fixtures</a></li>
                     <li><a href="../standings/standings.html">Standings</a></li>
                     <li><a href="../teams/teams.html">Teams</a></li>
-                    
+
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">Players▾</a> <ul class="dropdown-menu">
+                        <a href="#" class="dropdown-toggle">Players▾</a>
+                        <ul class="dropdown-menu">
                             <li><a href="../player_name/player_name.html">Player Name</a></li>
                             <li><a href="../season/season.html">Season</a></li>
                             <li><a href="../get_players/get_players.html">Get Players (by League & Season)</a></li>
@@ -56,7 +60,7 @@
     <div class="container">
         <h1>Top Scorers</h1>
         <p class="subtitle">Search for the top scorers by league and season.</p>
-        
+
         <div class="search-box">
             <div class="input-group">
                 <label for="league-id-input">League ID:</label>
@@ -68,13 +72,14 @@
             </div>
             <button id="search-button">Get Top Scorers</button>
         </div>
-        
-        <hr>
-        
-        <div id="topscorers-container">
-            </div>
-    </div>
 
+        <hr>
+
+        <div id="topscorers-container">
+        </div>
+    </div>
+    <script src="../main.js"></script>
     <script src="top_scorers.js"></script>
 </body>
+
 </html>

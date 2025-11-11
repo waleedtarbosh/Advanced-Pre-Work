@@ -1,70 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-
-    // ======================================================
-    // === START: NAVBAR JS (Copied from main.js) ===
-    // ======================================================
-
-    // --- 1. Hamburger Menu Code (Toggle main menu) ---
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const navMenu = document.getElementById('nav-links-menu');
-
-    // Check if elements exist before adding listeners
-    if (hamburgerBtn && navMenu) {
-        hamburgerBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-    }
-
-    // --- 2. Code to open "Players" submenu on mobile click ---
-    const dropdowns = document.querySelectorAll('.nav-links .dropdown');
-
-    dropdowns.forEach(dropdown => {
-        const toggleLink = dropdown.querySelector('.dropdown-toggle');
-        
-        if (toggleLink) {
-            toggleLink.addEventListener('click', (event) => {
-                
-                // Check if we are in mobile view (by checking if hamburger is visible)
-                if (hamburgerBtn && hamburgerBtn.offsetParent !== null) { 
-                    
-                    // [Important] Prevent the link from navigating away
-                    event.preventDefault(); 
-                    
-                    // Toggle the 'open' class on the parent (li.dropdown)
-                    dropdown.classList.toggle('open');
-                }
-            });
-        }
-    });
-
-    // --- 3. Code to control "Players" arrow visibility (hide on desktop) ---
-    function handleArrowVisibility() {
-        // Need to check for hamburgerBtn existence again inside the function
-        const hamburgerBtn = document.getElementById('hamburger-btn'); 
-        const dropdownToggle = document.querySelector('.dropdown-toggle');
-        
-        if (dropdownToggle && hamburgerBtn) {
-            // If hamburger is hidden (we are on desktop), hide the arrow
-            if (hamburgerBtn.offsetParent === null) { 
-                dropdownToggle.style.setProperty('--arrow-display', 'none');
-            } else {
-                // Else (we are on mobile), show the arrow
-                dropdownToggle.style.setProperty('--arrow-display', 'inline-block');
-            }
-        }
-    }
-
-    // Call the function on page load
-    handleArrowVisibility();
-
-    // And call it on window resize
-    window.addEventListener('resize', handleArrowVisibility);
-
-    // ======================================================
-    // === END: NAVBAR JS ===
-    // ======================================================
-
-
     // ======================================================
     // === START: FIXTURES.JS (Page-Specific Logic) ===
     // ======================================================
@@ -291,4 +224,3 @@ with your personal key to fetch the data.
     // === END: FIXTURES.JS (Page-Specific Logic) ===
     // ======================================================
 
-}); // End of DOMContentLoaded
