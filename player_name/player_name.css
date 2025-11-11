@@ -1,0 +1,435 @@
+/* --- Global Reset & Setup --- */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    color: white;
+    background-color: #0a0a14;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ============================================== */
+/* === START: NAVBAR CSS (Merged) === */
+/* ============================================== */
+.main-header {
+    width: 95%;
+    max-width: 1700px;
+    margin: 0 auto;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: rgba(30, 40, 60, 0.7);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.nav-left .logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background: linear-gradient(90deg, #00f0ff, #ff007f);
+    border-radius: 50px;
+    padding: 5px 15px 5px 5px;
+    box-shadow: 0 0 12px #ff007f;
+    color: #0a0a14; 
+}
+
+.logo-img {
+    height: 45px;
+    width: 45px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: white;
+    border: 4px solid #0a0a14; 
+    position: relative;
+}
+
+.logo-img::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 20px; 
+    height: 22px;
+    background-color: #0a0a14; 
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.nav-right .nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.nav-links a.active {
+    color: #e50a14; 
+}
+
+.nav-links li.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    content: ' ▼';
+    font-size: 0.7em;
+    margin-left: 5px;
+    display: var(--arrow-display, inline-block); 
+}
+
+.dropdown-menu {
+    display: none; 
+    position: absolute;
+    top: 100%; 
+    right: 0; 
+    left: auto;
+    background-color: rgba(30, 40, 60, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: none; 
+    border-radius: 0 0 15px 15px; 
+    min-width: 280px; 
+    z-index: 1001; 
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    overflow: hidden; 
+}
+
+.nav-links li.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    margin: 0; 
+}
+
+.dropdown-menu li a {
+    display: block; 
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    color: #ccc;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #e50a14; 
+    color: white;
+}
+/* ============================================== */
+/* === END: NAVBAR CSS === */
+/* ============================================== */
+
+
+/* ============================================== */
+/* === START: PLAYER_NAME.CSS (Page-Specific) === */
+/* ============================================== */
+.container {
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+h1 {
+    color: #ffffff; /* Dark mode fix */
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 20px; /* Increased margin */
+    margin-top: 120px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #ccc; /* Dark mode fix */
+    text-align: left;
+}
+
+/* --- Input Box Styling (Dark Mode) --- */
+input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #555; /* Dark mode fix */
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #2a2a3a; /* Dark mode fix */
+    color: #ffffff; /* Dark mode fix */
+    box-sizing: border-box; 
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #17a2b8; 
+    box-shadow: 0 0 0 4px rgba(23, 162, 184, 0.1);
+    outline: none;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #333; /* Dark mode fix */
+    margin: 30px 0;
+}
+
+.search-box {
+    margin-bottom: 20px;
+}
+
+/* --- Button Styling --- */
+button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #17a2b8, #007991);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(23, 162, 184, 0.15);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(23, 162, 184, 0.2);
+}
+
+button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(23, 162, 184, 0.15);
+}
+
+/* --- Results Container --- */
+#players-container {
+    margin-top: 25px;
+}
+
+/* --- Player Card Styling (Dark Mode) --- */
+.player-card {
+    display: flex;
+    align-items: center;
+    background-color: #1a1a2e; /* Dark mode fix */
+    border-radius: 10px;
+    border: 1px solid #333; /* Dark mode fix */
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.player-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.07);
+}
+
+.player-photo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 3px solid #17a2b8; 
+    object-fit: cover;
+    padding: 2px; 
+    background-color: #fff;
+}
+
+.player-info {
+    text-align: left;
+    flex: 1; /* Allow info to take remaining space */
+}
+
+.player-info h2 {
+    font-size: 1.4em;
+    color: #ffffff; /* Dark mode fix */
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.player-info p {
+    font-size: 1em;
+    color: #ccc; /* Dark mode fix */
+    margin: 4px 0;
+}
+.player-info p strong {
+    color: #eee; /* Dark mode fix */
+    min-width: 100px; /* Adjusted for longer labels */
+    display: inline-block;
+}
+
+/* ======================================================= */
+/* === START: RESPONSIVE MEDIA QUERIES (Merged) === */
+/* ======================================================= */
+
+/* 1. Hamburger Button Styling */
+.hamburger-btn {
+    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger-btn .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: white;
+    transition: 0.3s;
+}
+
+/* ======================================================= */
+/* === For Medium Screens (Tablets) and Smaller === */
+/* ======================================================= */
+@media (max-width: 992px) {
+
+    /* 2. Show the hamburger button */
+    .hamburger-btn {
+        display: block; 
+    }
+
+    /* 3. Hide the main nav links (prepare for dropdown) */
+    .nav-right .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 75px; 
+        left: 0;
+        width: 100%;
+        background: rgba(30, 40, 60, 0.95); 
+        padding: 10px 0;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* 4. Style list items for vertical layout */
+    .nav-links li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 15px;
+        width: 100%;
+    }
+
+    /* 5. Show menu when .active class is added by JS */
+    .nav-right .nav-links.active {
+        display: flex; 
+    }
+
+    /* 6. "Players" Submenu Mobile Styling */
+    .nav-links li.dropdown:hover .dropdown-menu {
+        display: none;
+    }
+    .dropdown-menu {
+        position: relative; 
+        top: auto;
+        left: auto;
+        min-width: 100%;
+        background: rgba(10, 10, 20, 0.5); 
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        padding-left: 20px; 
+    }
+    .nav-links li.dropdown.open .dropdown-menu {
+        display: block;
+    }
+    .dropdown-menu li a {
+        text-align: left; 
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+    .dropdown-toggle::after {
+        content: ' ▸'; 
+        font-size: 0.7em;
+        margin-left: 5px;
+        display: var(--arrow-display, inline-block); 
+        transition: transform 0.3s ease; 
+    }
+    .nav-links li.dropdown.open .dropdown-toggle::after {
+        transform: rotate(90deg); 
+    }
+}
+
+/* ======================================================= */
+/* === For Smallest Screens (Phones) === */
+/* ======================================================= */
+@media (max-width: 480px) {
+    
+    .navbar {
+        padding: 5px 10px;
+        width: 98%; 
+    }
+
+    .nav-left .logo {
+        font-size: 1rem;
+        padding: 5px 10px 5px 5px;
+    }
+    .logo-img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    /* Page-specific responsive adjustment */
+    .player-card {
+        flex-direction: column; /* Stack photo on top of info */
+        align-items: center;
+    }
+    .player-photo {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .player-info {
+        text-align: center;
+    }
+    .player-info p {
+        justify-content: center;
+    }
+}
