@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Statistics</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;700&family=Roboto:wght@400;500&display.swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="get_players.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="../index.html" class="logo">
+                    <div class="logo-img"></div> 
+                    <span>ProSports</span>
+                </a>
+            </div>
+            <div class="nav-right">
+                
+                <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <ul class="nav-links" id="nav-links-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../fixtures/fixtures.html">Fixtures</a></li>
+                    <li><a href="../standings/standings.html">Standings</a></li>
+                    <li><a href="../teams/teams.html">Teams</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="../players/players.html" class="dropdown-toggle">Players▾</a> <ul class="dropdown-menu">
+                            <li><a href="../player_name/player_name.html">Player Name</a></li>
+                            <li><a href="../season/season.html">Season</a></li>
+                            <li><a href="get_players.html" class="active">Get Players (by League & Season)</a></li>
+                            <li><a href="../player_history/player_history.html">Get Player's Team History</a></li>
+                            <li><a href="../team_squad/team_squad.html">Get Team Squad</a></li>
+                            <li><a href="../top_scorers/top_scorers.html">Get Top Scorers</a></li>
+                            <li><a href="../top_assists/top_assists.html">Get Top Assists</a></li>
+                            <li><a href="../top_yellow_cards/top_yellow_cards.html">Get Top Yellow Cards</a></li>
+                            <li><a href="../top_red_cards/top_red_cards.html">Get Top Red Cards</a></li>
+                            <li><a href="../injuries/injuries.html">Get Injuries</a></li>
+                            <li><a href="../player_transfers/player_transfers.html">Get Player & Team Transfers</a></li>
+                            <li><a href="../player_trophies/player_trophies.html">Get Player & Coach Trophies</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1>Player Statistics</h1>
+        <p class="subtitle">Search for player statistics by league, team, or player ID.</p>
+        
+        <div class="search-box">
+            
+            <div class="input-group search-mode-group">
+                <label for="search-mode-select">Search By:</label>
+                <select id="search-mode-select">
+                    <option value="league" selected>League & Season</option>
+                    <option value="player">Player ID & Season</option>
+                    <option value="team">Team ID & Season</option>
+                </select>
+            </div>
+
+            <div class="dynamic-inputs">
+                <div class="input-group" id="league-input-wrapper">
+                    <label for="league-id-input">League ID:</label>
+                    <input type="text" id="league-id-input" placeholder="e.g., 39" value="39">
+                </div>
+                
+                <div class="input-group hidden-input" id="player-input-wrapper">
+                    <label for="player-id-input">Player ID:</label>
+                    <input type="text" id="player-id-input" placeholder="e.g., 874">
+                </div>
+
+                <div class="input-group hidden-input" id="team-input-wrapper">
+                    <label for="team-id-input">Team ID:</label>
+                    <input type="text" id="team-id-input" placeholder="e.g., 33">
+                </div>
+            </div>
+
+            <div class="input-group season-group">
+                <label for="season-input">Season:</label>
+                <input type="text" id="season-input" placeholder="e.g., 2021" value="2021">
+            </div>
+
+            <button id="search-button">Get Statistics</button>
+        </div>
+        
+        <hr>
+        
+        <div id="players-container">
+            </div>
+    </div>
+
+    <script src="get_players.js"></script>
+</body>
+</html>
