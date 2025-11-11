@@ -1,4 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
+/*--------------------  loader script start ---------------------*/
+
+function loader(){
+    document.querySelector('.loader-container').classList.add('fade-out');
+}
+  
+function fadeOut(){
+    // This will run the 'loader' function once after 3000ms (3 seconds)
+    // Using setInterval (like your old code) works, but setTimeout is cleaner
+    // because you only need to hide it once.
+    setTimeout(loader, 3000);
+}
+  
+// We assign the function 'fadeOut' to run AFTER the window loads
+// Your old code 'window.onload = fadeOut();' was a bug
+// that ran the function immediately. This is the correct way:
+window.onload = fadeOut;
+
+/*--------------------  loader script end ---------------------*/
 
     // ======================================================
     // === START: NAVBAR JS (Merged) ===

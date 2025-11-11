@@ -30,6 +30,30 @@ ul {
     list-style: none;
 }
 
+
+
+/*--------------------  loader section start ---------------------*/
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.loader-container.fade-out {
+  /* This makes it slide up to disappear */
+  top: -120%;
+}
+/*--------------------  loader section end ---------------------*/
+
+
+
 /* --- Navbar Styling --- */
 .main-header {
     width: 95%;
