@@ -67,7 +67,7 @@ To get a local copy up and running, follow these simple steps.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/](https://github.com/)[YourUsername]/Advanced-Pre-Work.git
+    git clone https://github.com/[YourUsername]/Advanced-Pre-Work.git
     ```
     *(Don't forget to replace `[YourUsername]` with your actual GitHub username!)*
 

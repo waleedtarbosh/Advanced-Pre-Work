@@ -12,7 +12,7 @@ Please replace the placeholder string "PUT_YOUR_API_KEY_HERE"
 with your personal key to fetch the data.
 ===================================================================
 */
-    const apiKey = 'b801cc075516be97da6bd24c81b304c7'; // FAKE API KEY / PLACEHOLDER
+    const apiKey = 'PUT_YOUR_REAL_API_KEY_HERE'; // FAKE API KEY / PLACEHOLDER
     const fetchOptions = {
         method: 'GET',
         headers: {
