@@ -36,15 +36,21 @@ This is a website dedicated to providing comprehensive and real-time football (s
 The website is structured into numerous feature-specific pages:
 
 * **index.html**: The homepage, featuring main navigation to all other sections.
-* **standings/standings.html**: Displays the current league tables.
-* **fixtures/fixtures.html**: Shows upcoming and past match results.
-* **teams/teams.html**: A directory of teams.
-* **team_squad/team_squad.html**: Displays the player roster for a specific team.
-* **players/players.html**: A directory of players.
+* **fixtures/fixtures.html**: Fixtures & Results - Search for matches by league, team, date, ID, or live status.
+* **standings/standings.html**: League Standings - Search for league tables by league or team.
+* **teams/teams.html**: Team Information - Search for teams by league, ID, name, or country.
 * **player_name/player_name.html**: Shows detailed stats for a specific player.
-* **top_scorers/top_scorers.html**: Lists the top goal scorers.
-* **top_assists/top_assists.html**: Lists the top assist providers.
-* ...and many other pages for assists, cards, injuries, player history, and transfers.
+* **season/season.html**: Player's Seasons - Search for Player's Seasons.
+* **get_players/get_players.html**: Player Statistics - Search for player statistics by league, team, or player ID.
+* **player_history/player_history.html**: Player Team History - Enter a Player ID to see their complete team history.
+* **team_squad/team_squad.html**: Team Squads - Search by Team ID (for a full squad) or Player ID (for their current teams).
+* **top_scorers/top_scorers.html**: Top Scorers - Search for the top scorers by league and season.
+* **top_assists/top_assists.html**: Top Assists - Search for the top assist providers by league and season.
+* **top_yellow_cards/top_yellow_cards.html**: Top Yellow Cards - Search for players with the most yellow cards by league and season.
+* **top_red_cards/top_red_cards.html**: Top Red Cards - Search for players with the most red cards by league and season.
+* **injuries/injuries.html**: Player Injuries - Search for injuries by league, team, player, or fixture.
+* **player_transfers/player_transfers.html**: Player & Team Transfers - Search for transfers by Player ID or Team ID.
+* **player_trophies/player_trophies.html**: Trophy Room - Search for trophies by Player ID or Coach ID.
 
 ## 💻 Tech Stack & Styles
 
