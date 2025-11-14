@@ -243,7 +243,82 @@ ul {
     font-size: 0.9rem;
     color: #ccc;
 }
+/* ===================================
+   Hero Live Button (Call to Action)
+   =================================== */
 
+.btn-hero-live {
+  /* --- Basic Design --- */
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem; /* 16px */
+  color: #FFFFFF; /* White text */
+  text-transform: uppercase; /* Match site style */
+  letter-spacing: 0.5px;
+
+  /* --- Sizing & Spacing --- */
+  padding: 12px 28px;
+  padding-left: 48px; /* Space for icon */
+  margin-top: 30px; /* Space from paragraph above */
+
+  /* --- Shape & Border (Using your design's color) --- */
+  background-color: transparent;
+  border: 2px solid #e50a14; /* <-- Your official design color */
+  border-radius: 5px; 
+
+  /* --- Extras --- */
+  position: relative; 
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* --- Hover Effect (Using your design's color) --- */
+.btn-hero-live:hover {
+  background-color: #e50a14; /* <-- Your official design color */
+  color: #FFFFFF; /* Keep white for contrast */
+  box-shadow: 0 4px 15px rgba(229, 10, 20, 0.4); /* Shadow in same color */
+}
+
+/* --- Pulse Icon (Using your design's color) --- */
+.btn-hero-live .pulse-icon {
+  width: 9px;
+  height: 9px;
+  background-color: #e50a14; /* <-- Your official design color */
+  border-radius: 50%;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.btn-hero-live .pulse-icon::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #e50a14; /* <-- Your official design color */
+  border-radius: 50%;
+  animation: pulse-live 1.7s infinite;
+}
+
+/* --- Pulse Animation Definition --- */
+@keyframes pulse-live {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
 /* --- Next Match Bar Styling --- */
 .next-match-bar {
     display: flex;

@@ -168,7 +168,17 @@
     .hero-title {
         font-size: 3.5rem; /* Smaller font for phones */
     }
+    .btn-hero-live {
+        font-size: 0.9rem;    
+        padding: 10px 24px;
+        padding-left: 42px;
+        margin-top: 20px;
+    }
 
+    .btn-hero-live .pulse-icon {
+        left: 16px;
+    }
+    
     .time-block .number {
         font-size: 2.5rem;
     }
