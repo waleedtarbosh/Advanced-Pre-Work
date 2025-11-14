@@ -3,16 +3,7 @@
     // === START: STANDINGS.JS (Page-Specific Logic) ===
     // ======================================================
 
-    // --- API Configuration ---
-           /*
-===================================================================
-NOTE FOR DEVELOPERS:
-A valid API key from API-Football.com is required.
-Please replace the placeholder string "PUT_YOUR_API_KEY_HERE"
-with your personal key to fetch the data.
-===================================================================
-*/
-    const apiKey = 'PUT_YOUR_REAL_API_KEY_HERE'; // FAKE API KEY / PLACEHOLDER
+const apiKey = import.meta.env.VITE_API_KEY;
     const fetchOptions = {
         method: 'GET',
         headers: {

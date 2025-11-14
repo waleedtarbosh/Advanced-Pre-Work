@@ -2,16 +2,22 @@ document.addEventListener('DOMContentLoaded', () => {
 /*--------------------  loader script start ---------------------*/
 
 function loader(){
-    document.querySelector('.loader-container').classList.add('fade-out');
+    // First, find the element
+    const loaderElement = document.querySelector('.loader-container');
+    
+    // Check if it exists before using it
+    if (loaderElement) {
+        loaderElement.classList.add('fade-out');
+    }
 }
-  
+ 
 function fadeOut(){
     // This will run the 'loader' function once after 3000ms (3 seconds)
     // Using setInterval (like your old code) works, but setTimeout is cleaner
     // because you only need to hide it once.
     setTimeout(loader, 3000);
 }
-  
+ 
 // We assign the function 'fadeOut' to run AFTER the window loads
 // Your old code 'window.onload = fadeOut();' was a bug
 // that ran the function immediately. This is the correct way:
@@ -41,8 +47,9 @@ window.onload = fadeOut;
         
         if (toggleLink) {
             toggleLink.addEventListener('click', (event) => {
+                // Check if the hamburger button is visible (mobile view)
                 if (hamburgerBtn && hamburgerBtn.offsetParent !== null) { 
-                    event.preventDefault(); 
+                    event.preventDefault(); // Prevent navigating to "#"
                     dropdown.classList.toggle('open');
                 }
             });
@@ -55,14 +62,18 @@ window.onload = fadeOut;
         const dropdownToggle = document.querySelector('.dropdown-toggle');
         
         if (dropdownToggle && hamburgerBtn) {
+            // If hamburger is null (not visible), we are on desktop
             if (hamburgerBtn.offsetParent === null) { 
+                // Hide the arrow
                 dropdownToggle.style.setProperty('--arrow-display', 'none');
             } else {
+                // Show the arrow
                 dropdownToggle.style.setProperty('--arrow-display', 'inline-block');
             }
         }
     }
 
+    // Run once on load and again on resize
     handleArrowVisibility();
     window.addEventListener('resize', handleArrowVisibility);
 
@@ -82,16 +93,16 @@ window.onload = fadeOut;
         // Make sure all elements exist before starting
         if (!digit1 || !digit2 || !digit3 || !digit4) {
             console.error("Counter elements not found. Check HTML IDs.");
-            return;
+            return; // Stop the function if elements are missing
         }
 
         const digits = [digit1, digit2, digit3, digit4];
 
         // --- Counter Settings (You can edit these) ---
-        const startValue = 953;  // The number to start from (and reset to)
-        let currentValue = 953;  // The current number
-        const endValue = 1000;   // The number to count to
-        const speed = 150;       // The speed of the counter (in milliseconds)
+        const startValue = 953;   // The number to start from (and reset to)
+        let currentValue = 953;   // The current number
+        const endValue = 1000;  // The number to count to
+        const speed = 150;      // The speed of the counter (in milliseconds)
         // ------------------------------------
 
         const counterInterval = setInterval(() => {
